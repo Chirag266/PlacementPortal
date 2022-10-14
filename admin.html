@@ -31,7 +31,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Student's List</a>
+                        <a class="nav-link active" href="#studentsTable">Student's List</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -49,6 +49,153 @@
             </div>
         </div>
     </nav>
+
+    <table class="table text-center my-5" id="drivesTable">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Sl. No</th>
+                <th scope="col">Company</th>
+                <th scope="col">Drive Date</th>
+                <th scope="col">Register By</th>
+                <th scope="col">Job Profile</th>
+                <th scope="col"></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Amazon</td>
+                <td>19/09/22</td>
+                <td>30/09/22</td>
+                <td><a type="button" class="btn btn-primary d-inline">Job Profile</a></td>
+                <td><button type="button" class="btn btn-success d-inline" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Register</button></td>
+            </tr>
+            <tr>
+                <th scope="row">1</th>
+                <td>Amazon</td>
+                <td>19/09/22</td>
+                <td>30/09/22</td>
+                <td><a type="button" class="btn btn-primary d-inline">Job Profile</a></td>
+                <td><button type="button" class="btn btn-success d-inline" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Register</button></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Google</td>
+                <td>19/09/22</td>
+                <td>30/09/22</td>
+                <td><a type="button" class="btn btn-primary d-inline">Job Profile</a></td>
+                <td><button type="button" class="btn btn-success d-inline" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Register</button></td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Alphabet Inc</td>
+                <td>19/09/22</td>
+                <td>30/09/22</td>
+                <td><a type="button" class="btn btn-primary d-inline">Job Profile</a></td>
+                <td><button type="button" class="btn btn-success d-inline" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Register</button></td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>VMWare</td>
+                <td>19/09/22</td>
+                <td>30/09/22</td>
+                <td><a type="button" class="btn btn-primary d-inline">Job Profile</a></td>
+                <td><button type="button" class="btn btn-success d-inline" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Register</button></td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>Oracle</td>
+                <td>19/09/22</td>
+                <td>30/09/22</td>
+                <td><button type="button" class="btn btn-primary d-inline">Job Profile</button></td>
+                <td><button type="button" class="btn btn-success d-inline" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Register</button></td>
+            </tr>
+            <tr>
+                <th scope="row">6</th>
+                <td>Bluestacks</td>
+                <td>19/09/22</td>
+                <td>30/09/22</td>
+                <td><button type="button" class="btn btn-primary d-inline">Job Profile</button></td>
+                <td><button type="button" class="btn btn-success d-inline" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Register</button></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                    <div class="modal-body">
+                        <table class="table text-center my-5">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col dropdown">
+                                        <span class="dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Domain
+                                        </span>
+                                        <ul class="dropdown-menu">
+                                            <li class="dropdown-item" data-showDomain="">All</li>
+                                            <li class="dropdown-item" data-showDomain="Cyber">Cyber Security</li>
+                                            <li class="dropdown-item" data-showDomain="Data">Data Science</li>
+                                            <li class="dropdown-item" data-showDomain="SWE">Software Engineering</li>
+                                            <li class="dropdown-item" data-showDomain="Web">Web Development</li>
+                                        </ul>
+                                    </th>
+                                    <th scope="col">CGPA</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-domain="Cyber">
+                                    <th scope="row"><input class="form-check-input" type="checkbox" value=""></th>
+                                    <td>Aman</td>
+                                    <td>Cyber Security</td>
+                                    <td>7.7</td>
+                                </tr>
+                                <tr data-domain="Web">
+                                    <th scope="row"><input class="form-check-input" type="checkbox" value=""></th>
+                                    <td>Jacob</td>
+                                    <td>Web Development</td>
+                                    <td>8.1</td>
+                                </tr>
+                                <tr data-domain="Data">
+                                    <th scope="row"><input class="form-check-input" type="checkbox" value=""></th>
+                                    <td>Larry</td>
+                                    <td>Data Science</td>
+                                    <td>9.0</td>
+                                </tr>
+                                <tr data-domain="Data">
+                                    <th scope="row"><input class="form-check-input" type="checkbox" value=""></th>
+                                    <td>Page</td>
+                                    <td>Data Science</td>
+                                    <td>9.1</td>
+                                </tr>
+                                <tr data-domain="SWE">
+                                    <th scope="row"><input class="form-check-input" type="checkbox" value=""></th>
+                                    <td>Linus</td>
+                                    <td>Software Engineer</td>
+                                    <td>8.0</td>
+                                </tr>
+                                <tr data-domain="Web">
+                                    <th scope="row"><input class="form-check-input" type="checkbox" value=""></th>
+                                    <td>Ronit</td>
+                                    <td>Web Development</td>
+                                    <td>1.2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <table class="table text-center my-5" id="studentsTable">
         <thead class="table-dark">
@@ -141,7 +288,7 @@
 
         const dropdownDomainOptions = document.querySelectorAll('#studentsTable .dropdown-item')
 
-        dropdownDomainOptions.forEach( (option) => {
+        dropdownDomainOptions.forEach((option) => {
             option.addEventListener('click', showDomains)
         })
 
@@ -149,11 +296,11 @@
         let studentsData = document.querySelectorAll('#studentsTable tbody tr');
         function showDomains() {
             let showDomain = this.dataset.showdomain;
-            studentsData.forEach( (student) => {
-                if(student.dataset.domain != showDomain) {
+            studentsData.forEach((student) => {
+                if (student.dataset.domain != showDomain) {
                     student.style.display = 'none';
                 }
-                if(showDomain == '' || student.dataset.domain == showDomain) {
+                if (showDomain == '' || student.dataset.domain == showDomain) {
                     student.style.display = ''
                 }
             })
