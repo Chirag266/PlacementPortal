@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | Placement Portal</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">UMS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Student's List</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown link
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <button type="button" class="btn btn-danger">Sign Out </button>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <table class="table text-center my-5" id="studentsTable">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Sl. No</th>
+                <th scope="col">Name</th>
+                <th scope="col dropdown">
+                    <span class="dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Domain
+                    </span>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item" data-showDomain="">All</li>
+                        <li class="dropdown-item" data-showDomain="Cyber">Cyber Security</li>
+                        <li class="dropdown-item" data-showDomain="Data">Data Science</li>
+                        <li class="dropdown-item" data-showDomain="SWE">Software Engineering</li>
+                        <li class="dropdown-item" data-showDomain="Web">Web Development</li>
+                    </ul>
+                </th>
+                <th scope="col">CGPA</th>
+                <th scope="col">Block</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-domain="Cyber">
+                <th scope="row">1</th>
+                <td>Aman</td>
+                <td>Cyber Security</td>
+                <td>7.7</td>
+                <td><button type="button" class="btn btn-success d-inline">Unblock</button></td>
+            </tr>
+            <tr data-domain="Web">
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Web Development</td>
+                <td>8.1</td>
+                <td><button type="button" class="btn btn-danger d-inline">Block</button></td>
+            </tr>
+            <tr data-domain="Data">
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>Data Science</td>
+                <td>9.0</td>
+                <td><button type="button" class="btn btn-danger d-inline">Block</button></td>
+            </tr>
+            <tr data-domain="Data">
+                <th scope="row">4</th>
+                <td>Page</td>
+                <td>Data Science</td>
+                <td>9.1</td>
+                <td><button type="button" class="btn btn-danger d-inline">Block</button></td>
+            </tr>
+            <tr data-domain="SWE">
+                <th scope="row">5</th>
+                <td>Linus</td>
+                <td>Software Engineer</td>
+                <td>8.0</td>
+                <td><button type="button" class="btn btn-danger d-inline">Block</button></td>
+            </tr>
+            <tr data-domain="Web">
+                <th scope="row">6</th>
+                <td>Ronit</td>
+                <td>Web Development</td>
+                <td>1.2</td>
+                <td><button type="button" class="btn btn-danger d-inline">Block</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script>
+        let blockBtns = document.querySelectorAll('#studentsTable button');
+
+
+        blockBtns.forEach(button => {
+            button.addEventListener('click', handleBlockBtn);
+        });
+
+
+        function handleBlockBtn() {
+            if (this.classList.contains('btn-success')) {
+                this.classList.replace('btn-success', 'btn-danger');
+                this.textContent = 'Block';
+            }
+            else {
+                this.classList.replace('btn-danger', 'btn-success');
+                this.textContent = 'Unblock';
+            }
+
+        }
+
+        const dropdownDomainOptions = document.querySelectorAll('#studentsTable .dropdown-item')
+
+        dropdownDomainOptions.forEach( (option) => {
+            option.addEventListener('click', showDomains)
+        })
+
+        // TODO: Try to Improve Logic i.e show web dev domains after cyber
+        let studentsData = document.querySelectorAll('#studentsTable tbody tr');
+        function showDomains() {
+            let showDomain = this.dataset.showdomain;
+            studentsData.forEach( (student) => {
+                if(student.dataset.domain != showDomain) {
+                    student.style.display = 'none';
+                }
+                if(showDomain == '' || student.dataset.domain == showDomain) {
+                    student.style.display = ''
+                }
+            })
+
+        }
+
+    </script>
+</body>
+
+</html>
