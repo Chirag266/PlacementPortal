@@ -40,7 +40,9 @@ body {
 
 .profile {
 
-    width: 409px;
+    /* width: 409px; */
+    /* align-items: flex-start; */
+    align-items: center;
 }
 
 .flex {
@@ -48,10 +50,11 @@ body {
 }
 
 .profile-detail {
-    margin-left: 32px;
-    padding-top: 65px;
+    /* margin-left: 32px; */
+    /* padding-top: 65px; */
     font-weight: bolder;
     font-size: 20px;
+    width: 230px;
 }
 
 .placed-student {
@@ -66,22 +69,31 @@ body {
 
 .new {
     border: 2px solid black;
-
-    height: 25px;
-    width: 71px;
     text-align: center;
-    padding-top: 7px;
     background-color: blue;
     font-size: 18px;
     font-weight: bolder;
     color: white;
     border-radius: 19px;
+    padding: 0.25em 0.5em;
+    animation: blink infinite 1s;
+}
 
-    margin: 46px 12px;
+@keyframes blink {
+    30% {
+        background-color: blue;
+    }
+    60% {
+        background-color: rgb(119, 119, 250);
+    }
+    90% {
+        background-color: blue;
+    }
 }
 
 .update {
-    margin: 24px 172px;
+    /* margin: 24px 172px; */
+    align-items: center;
 
 }
 
@@ -94,9 +106,7 @@ body {
     font-size: 18px;
     font-weight: bolder;
     border-radius: 5px;
-    height: 40px;
-    padding-top: 18px;
-    margin-top: -4px;
+    padding: 0.5em 0;
 }
 
 a {
@@ -119,15 +129,13 @@ a {
     font-size: 18px;
     font-weight: bolder;
     border-radius: 5px;
-    height: 40px;
-    padding-top: 18px;
-    margin-top: -4px;
-
+    padding: 0.5em 0;
 }
 
 .footleft {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .item {

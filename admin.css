@@ -138,14 +138,14 @@ a {
     padding-left: 50px;
 } */
 
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body {
-    
-}
+
+body {}
 
 html {
     scroll-behavior: smooth;
@@ -154,4 +154,53 @@ html {
 a.dropdown-toggle {
     color: White;
     text-decoration: none;
+}
+
+.table-container {
+    width: 100vw;
+    overflow-x: scroll;
+}
+
+.profile_pic {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.carousel {
+    width: 40vw;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 780px) {
+    #profile {
+        flex-direction: column;
+    }
+
+    .carousel {
+        width: 90vw;
+    }
+}
+
+
+footer {
+    background-color: #212529;
+    color: white;
+    text-align: center;
+}
+
+#summaryTable {
+    height: 300px;
+    overflow: hidden;
+}
+#summaryTable table {
+    animation: scroll infinite 15s;
+}
+@keyframes scroll {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
 }
